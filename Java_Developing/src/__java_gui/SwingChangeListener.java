@@ -99,7 +99,7 @@ public class SwingChangeListener extends JFrame {
 		// occurs on the slider
 
 		howManyTime.addChangeListener(lForSlider);
-
+		panel.add(howManyTime);
 		panel.add(label3);
 		panel.add(textFiled1);
 		panel.add(label1);
@@ -130,11 +130,32 @@ public class SwingChangeListener extends JFrame {
 
 					System.exit(0);
 				}
-			}
+				  if(addNums.isSelected()) { totalCalc = addNumbers(number1, number2, howManyTime.getValue());
+			         } else if(substract.isSelected()) { totalCalc = subtractNumbers(number1, number2, howManyTime.getValue());
+			         } else if(multiNums.isSelected()) { totalCalc = multiplyNumbers(number1, number2, howManyTime.getValue());
+			         } else { totalCalc = divideNumbers(number1, number2, howManyTime.getValue()); }
 
+			         // If the dollar is selected in the checkbox print the number as currency 
+
+			         if(dollarSign.isSelected()) {
+			             // Defines that you want to format a number with $ and commas
+			             NumberFormat numFormat = NumberFormat.getCurrencyInstance();
+			             JOptionPane.showMessageDialog(SwingChangeListener.this, numFormat.format(totalCalc), "Solution", JOptionPane.INFORMATION_MESSAGE);
+			         }
+
+			         // If the comma is selected in the checkbox print the number with commas
+			         else if(commaSeparator.isSelected()) {
+
+			             // Defines that you want to format a number with commas
+			             NumberFormat numFormat = NumberFormat.getNumberInstance();
+			             JOptionPane.showMessageDialog(SwingChangeListener.this, numFormat.format(totalCalc), "Solution", JOptionPane.INFORMATION_MESSAGE);
+			         } else {
+			         JOptionPane.showMessageDialog(SwingChangeListener.this, totalCalc, "Solution", JOptionPane.INFORMATION_MESSAGE);
+			         }
+			     }
+			}
 		}
 
-	}
 
 	private class ListenForSlider implements ChangeListener {
 
