@@ -1,4 +1,4 @@
-package __Threads;
+package __threads;
 
 public class GetTheMail implements Runnable{
 	

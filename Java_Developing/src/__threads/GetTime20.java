@@ -1,4 +1,4 @@
-package __Threads;
+package __threads;
 
 import java.text.DateFormat;
 import java.util.Date;

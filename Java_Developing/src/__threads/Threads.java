@@ -1,4 +1,4 @@
-package __Threads;
+package __threads;
 
 import java.util.*;
 import java.text.DateFormat;
@@ -30,8 +30,9 @@ public class Threads {
 		
 		ScheduledThreadPoolExecutor eventPool = new ScheduledThreadPoolExecutor(5);
 			
-		eventPool.scheduleAtFixedRate(new GetTime20(), 0, 2, TimeUnit.SECONDS);
-		eventPool.scheduleAtFixedRate(new GetTheMail(5), 0, 2, TimeUnit.SECONDS);
+		//eventPool.scheduleAtFixedRate(new GetTime20(), 0, 2, TimeUnit.SECONDS);
+	//	eventPool.scheduleAtFixedRate(new GetTheMail(5), 0, 2, TimeUnit.SECONDS);
+		eventPool.scheduleAtFixedRate(new PerformSystemCheck("CODING"), 0, 3, TimeUnit.SECONDS);
 		
 		
 		System.out.println("Number of theread: "  + Thread.activeCount());

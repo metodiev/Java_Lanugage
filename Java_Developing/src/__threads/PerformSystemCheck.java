@@ -1,4 +1,4 @@
-package __Threads;
+package __threads;
 
 import java.util.concurrent.locks.ReentrantLock;;
 
