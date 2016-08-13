@@ -80,12 +80,12 @@ public class JavaApplets {
 		panel.add(q4Panel);
 		
 		getResultBut = new JButton("Get Result");
-		GetResultsListener butListener = new getResultsListener();
+		//GetResultsListener butListener = new getResultsListener();
 		
-		getResultBut.addActionListener(butListener);
+		//getResultBut.addActionListener(butListener);
 		
 		panel.add(getResultBut);
-		this.setVisible(true);
+		//this.setVisible(true);
 	
 	}
 	
